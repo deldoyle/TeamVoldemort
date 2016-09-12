@@ -8,19 +8,20 @@
                 android:paddingRight="@dimen/activity_horizontal_margin"
                 android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context="com.zachlittle.android.aca.groupappone.MainActivity"
-                android:background="#4527A0"
+                android:background="@color/material_blue_grey_800"
     >
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit It Fam"
+        android:text="PLEASE PUSH MY BUTTON SIR"
         android:id="@+id/buttonSubmit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="#FF6F00"
-        android:background="#000000"
-        android:clickable="true"/>
+        android:textColor="#f7f30c"
+        android:background="@android:color/black"
+        android:clickable="true"
+        android:typeface="monospace"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -29,7 +30,10 @@
         android:text="Name Input"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:textColor="#f7f30c"
+        android:typeface="monospace"
+        android:visibility="visible"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -38,7 +42,9 @@
         android:layout_below="@+id/editName"
         android:layout_centerHorizontal="true"
         android:text="Address Input"
-        />
+        android:textColor="#f7f30c"
+        android:typeface="monospace"
+        android:visibility="visible"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -47,18 +53,24 @@
         android:text="Phone Number Input"
         android:layout_below="@+id/editZip"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:textColor="#f7f30c"
+        android:typeface="monospace"
+        android:visibility="visible"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Team He-Who-Should-Not-Be-Named"
+        android:text=" Team Voldy"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/editName"
         android:layout_alignEnd="@+id/editName"
-        android:textSize="20dp"
-        android:textColor="#FF6F00"/>
+        android:textSize="48dp"
+        android:textColor="#ffffff"
+        android:background="@android:color/black"
+        android:backgroundTint="@color/abc_background_cache_hint_selector_material_dark"
+        android:typeface="monospace"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -66,6 +78,20 @@
         android:id="@+id/editZip"
         android:layout_below="@+id/editAddress"
         android:layout_centerHorizontal="true"
-        android:text="Zip-Code Input"/>
+        android:text="Zip-Code Input"
+        android:textColor="#f7f30c"
+        android:typeface="monospace"
+        android:visibility="visible"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="TELL ME WHERE YOU LIVE YO"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/editName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:typeface="monospace"/>
 
 </RelativeLayout>

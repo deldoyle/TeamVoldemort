@@ -27,13 +27,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editName"
-        android:text="Name"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textColor="#f7f30c"
         android:typeface="monospace"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:hint="Name"/>
 
     <EditText
         android:layout_width="match_parent"
@@ -41,33 +41,33 @@
         android:id="@+id/editAddress"
         android:layout_below="@+id/editName"
         android:layout_centerHorizontal="true"
-        android:text="Address"
         android:textColor="#f7f30c"
         android:typeface="monospace"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:hint="Address"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editPhone"
-        android:text="Phone Number"
         android:layout_below="@+id/editZip"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="#f7f30c"
         android:typeface="monospace"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:hint="Phone Number"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="{Team Voldy}"
+        android:text="-{Team Voldy}-"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/editName"
         android:layout_alignEnd="@+id/editName"
-        android:textSize="48dp"
-        android:textColor="#ffffff"
+        android:textSize="41dp"
+        android:textColor="#f7f30c"
         android:backgroundTint="@color/abc_background_cache_hint_selector_material_dark"
         android:typeface="monospace"/>
 
@@ -77,20 +77,55 @@
         android:id="@+id/editZip"
         android:layout_below="@+id/editAddress"
         android:layout_centerHorizontal="true"
-        android:text="Zip-Code"
         android:textColor="#f7f30c"
         android:typeface="monospace"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        android:hint="ZIP Code"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="-TELL ME WHERE YOU LIVE-"
+        android:id="@+id/irrTextView"
+        android:typeface="monospace"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="THE GREATEST LOCATOR"
         android:id="@+id/textView2"
-        android:layout_above="@+id/editName"
+        android:layout_below="@+id/irrTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
-        android:typeface="monospace"/>
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="APPLICATION"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:typeface="monospace"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="In the World!"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/textView3"
+        android:layout_centerHorizontal="true"
+        android:textSize="45dp"
+        android:textColor="#000000"/>
 
 </RelativeLayout>

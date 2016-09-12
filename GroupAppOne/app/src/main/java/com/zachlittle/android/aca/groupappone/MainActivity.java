@@ -40,25 +40,17 @@ public class MainActivity extends AppCompatActivity {
                 phoneNumberInput = mPhoneNumber.getText().toString();
                 addressInput = mAddress.getText().toString();
                 addressZipCode = mZipCode.getText().toString();
-
                 addressInput = (addressInput + "," + addressZipCode );
-
-
-
-
-                /* street adress input "," then zip code input
-                 */
+                goToResults();
             }
         });
-
-
-
-
     }
+
     public void goToResults() {
         Intent intent = new Intent(this, VoldiesContact.class);
         intent.putExtra(TAG_NAME, nameInput);
         intent.putExtra(TAG_PHONE, phoneNumberInput);
         intent.putExtra(TAG_ADDRESS, addressInput);
+        startActivity(intent);
     }
 }

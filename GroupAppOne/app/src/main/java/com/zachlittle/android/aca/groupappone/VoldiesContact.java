@@ -21,16 +21,15 @@ public class VoldiesContact extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
 
-        mTextView = (TextView) findViewById(R.id.);
+        mTextView = (TextView) findViewById(R.id.resultsTextView);
 
-        mButton = (Button) findViewById(R.id.button);
+        mButton = (Button) findViewById(R.id.googleButton);
 
         mButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
                 Intent mapsIntent = null;
-                (R.id.imageButton3);
                 mapsIntent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("geo: " + " "));
 

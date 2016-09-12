@@ -41,6 +41,7 @@ public class VoldiesContact extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 Intent mapsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo: " + addressFromMain ));
+                startActivity(mapsIntent);
 
             }
         });

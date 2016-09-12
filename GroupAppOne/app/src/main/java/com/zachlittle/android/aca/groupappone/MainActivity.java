@@ -3,6 +3,7 @@ package com.zachlittle.android.aca.groupappone;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -14,30 +15,42 @@ public class MainActivity extends AppCompatActivity {
     EditText mName;
     EditText mAddress;
     EditText mPhoneNumber;
+    EditText mZipCode;
     Button mButtonSubmit;
+    String nameInput;
+    String phoneNumberInput;
+    String addressInput;
+    String addressZipCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mName = (EditText)findViewById(com.jacksonmix.android.aca.groupappone.R.id.);
-        mPhoneNumber = (EditText)findViewById(com.jacksonmix.android.aca.groupappone.R.id.);
-        mAddress = (EditText)findViewById(com.jacksonmix.android.aca.groupappone.R.id.);
-        mButtonSubmit = (Button)findViewById(com.jacksonmix.android.aca.groupappone.R.id.sumbitButton);
+        mName = (EditText)findViewById(R.id.editName);
+        mPhoneNumber = (EditText)findViewById(R.id.editPhone);
+        mAddress = (EditText)findViewById(R.id.editAddress);
+        mButtonSubmit = (Button)findViewById(R.id.buttonSubmit);
+        mZipCode = (EditText) findViewById(R.id.editZip);
 
-        mButtonSumbit.setOnClickListener();
+        mButtonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameInput = mName.getText().toString();
+                phoneNumberInput = mPhoneNumber.getText().toString();
+                addressInput = mAddress.getText().toString();
+                addressZipCode = mZipCode.getText().toString();
+            }
+        });
 
-        String nameInput = mName.getText().toString();
-        String phoneNumberInput;
-        String addressInput;
+
 
 
     }
     public void goToResults() {
-        Intent intent = new Intent(this.Voldiescontact.class);
-        intent.putStringExtra(TAG_NAME, nameInput);
-        intent.putStringExtra(TAG_PHONE, phoneNumberInput);
-        intent.putStringExtra(TAG_ADDRESS, addressIntent);
+        Intent intent = new Intent(this, VoldiesContact.class);
+        intent.putExtra(TAG_NAME, nameInput);
+        intent.putExtra(TAG_PHONE, phoneNumberInput);
+        intent.putExtra(TAG_ADDRESS, addressInput);
     }
 }

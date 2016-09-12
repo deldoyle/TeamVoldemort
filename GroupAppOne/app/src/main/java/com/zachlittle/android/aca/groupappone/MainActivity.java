@@ -40,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
                 phoneNumberInput = mPhoneNumber.getText().toString();
                 addressInput = mAddress.getText().toString();
                 addressZipCode = mZipCode.getText().toString();
+
+                addressInput = (addressInput + "," + addressZipCode );
+
+
+
+
+                /* street adress input "," then zip code input
+                 */
             }
         });
 

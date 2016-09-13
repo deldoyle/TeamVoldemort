@@ -62,10 +62,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="real magic bro"
+        android:text="push me dave"
         android:id="@+id/magicButton" android:layout_alignBottom="@+id/callButton"
         android:layout_centerHorizontal="true" android:layout_margin="2sp"
-        android:background="#ffffff" android:textColor="#000000" android:typeface="serif"
+        android:background="#bf2020" android:textColor="#000000" android:typeface="serif"
     />
 
 </RelativeLayout>

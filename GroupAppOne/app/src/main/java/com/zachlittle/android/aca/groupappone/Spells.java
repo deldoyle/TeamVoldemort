@@ -52,6 +52,8 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         playThatFunkyMagic();
+
+
     }
 
     @Override
@@ -71,7 +73,10 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
                 file = R.raw.obliviate;
                 break;
         }
-        MediaPlayer.create(this, file);
-        
+        mp = MediaPlayer.create(this, file);
+        mp.start();
+        mp.reset();
+        mp.release();
+
     }
 }

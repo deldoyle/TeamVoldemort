@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * Created by Zach on 9/12/16.
- */
+
 public class VoldiesContact extends AppCompatActivity{
 
     TextView mTextView;

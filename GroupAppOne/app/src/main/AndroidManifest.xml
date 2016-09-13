@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".VoldiesContact"></activity>
+        <activity android:name=".Spells"></activity>
     </application>
 
 </manifest>

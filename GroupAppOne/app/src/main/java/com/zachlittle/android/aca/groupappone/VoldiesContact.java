@@ -16,6 +16,7 @@ public class VoldiesContact extends AppCompatActivity{
     TextView mTextView;
     Button mButton;
     Button mCallButton;
+    Button mMagicButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class VoldiesContact extends AppCompatActivity{
 
         mButton = (Button) findViewById(R.id.googleButton);
         mCallButton = (Button) findViewById(R.id.callButton);
-
+        mMagicButton = (Button) findViewById(R.id.magicButton);
 
 
         Intent intent = getIntent();
@@ -48,6 +49,14 @@ public class VoldiesContact extends AppCompatActivity{
        });
 
 
+        mMagicButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToSpells();
+            }
+        });
+
+
         mButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -60,5 +69,10 @@ public class VoldiesContact extends AppCompatActivity{
             }
         });
 
+    }
+
+    public void goToSpells() {
+        Intent intent3 = new Intent(this, Spells.class);
+        startActivity(intent3);
     }
 }

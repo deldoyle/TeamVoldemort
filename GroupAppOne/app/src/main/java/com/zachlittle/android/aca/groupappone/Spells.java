@@ -7,15 +7,16 @@ import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.RadioGroup;
 
 
 public class Spells extends AppCompatActivity implements SensorEventListener {
 
     RadioGroup mRadioGroup;
-    int spellID =1;
+    private final static float ACC = 18;
     MediaPlayer mp = new MediaPlayer();
-
+    int file = R.raw.alohomora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,32 +33,50 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
+
                 switch (mRadioGroup.getId()){
                     case R.id.spellOne:
-                        spellID =1;
+                        file = R.raw.alohomora;
                         break;
                     case R.id.spellTwo:
-                        spellID =2;
+                        file = R.raw.threexpelliarmus;
                         break;
                     case R.id.spellThree:
-                        spellID =3;
+                        file = R.raw.obliviate;
                         break;
                 }
+
             }
         });
+        mp = MediaPlayer.create(this, file);
+
     }
 
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-        playThatFunkyMagic();
+
+        float[] values = sensorEvent.values;
+        if ((Math.abs(values[0]) > ACC || Math.abs(values[1]) > ACC || Math
+                    .abs(values[2]) > ACC)) {
+            Log.i("sensor", "running");
+            mp.start();
+        }
+        if(mp!=null) {
+            if(mp.isPlaying())
+                mp.stop();
+            mp.reset();
+            mp.release();
+            mp=null;
+        }
+
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
     }
 
-    private void playThatFunkyMagic(){
+    /*private void playThatFunkyMagic(){
         int file = R.raw.alohomora;
         switch (spellID){
             case 1:
@@ -73,13 +92,6 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
         mp = MediaPlayer.create(this, file);
         mp.start();
         mp.setLooping(false);
-        if(mp!=null) {
-            if(mp.isPlaying())
-                mp.stop();
-            mp.reset();
-            mp.release();
-            mp=null;
-        }
 
-    }
+    }*/
 }

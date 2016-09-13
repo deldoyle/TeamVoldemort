@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="     A handy (even life-saving) spell for removing an object from an enemy&apos;s grasp."
+            android:text="     The Disarm Spell, a handy (even life-saving) spell for removing an object from an enemy&apos;s grasp."
             android:id="@+id/secondSpellDescription" android:layout_gravity="center_horizontal"
             android:textColor="#f7f30c" android:clickable="true"/>
         <RadioButton

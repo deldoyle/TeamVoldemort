@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:background="#37474f">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" android:id="@+id/radioGroup"
+        android:clickable="false">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alohomora!"
+            android:id="@+id/spellOne" android:layout_below="@+id/spellTwo"
+            android:layout_centerHorizontal="true" android:textSize="35sp"
+            android:layout_marginBottom="17sp" android:textColor="#000000" android:checked="true"
+            android:typeface="monospace"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="     A handy (even life-saving) spell for removing an object from an enemy&apos;s grasp."
+            android:id="@+id/secondSpellDescription" android:layout_gravity="center_horizontal"
+            android:textColor="#f7f30c" android:clickable="true"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expelliarmus!"
+            android:id="@+id/spellTwo" android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" android:textSize="35sp"
+            android:layout_marginBottom="20sp" android:textColor="#000000" android:checked="true"
+            android:typeface="monospace"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="     The Forget Charm, a spell that could be used to erase memories from an individual&apos;s mind."
+            android:id="@+id/thirdSpellDescription" android:layout_gravity="center_horizontal"
+            android:textColor="#f7f30c"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Obliviate!"
+            android:id="@+id/spellThree" android:textSize="35sp"
+            android:layout_marginBottom="20dp" android:textColor="#000000" android:checked="false"
+            android:typeface="monospace"/>
+    </RadioGroup>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="     The Unlocking Charm, also known as the Thief&apos;s Friend."
+        android:id="@+id/firstSpellDescription" android:layout_gravity="center_horizontal"
+        android:layout_above="@+id/radioGroup" android:layout_centerHorizontal="true"
+        android:textColor="#f7f30c" android:focusableInTouchMode="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="     Please use these spells with great care. We are not liable for any damage in any way pertaining to the use of these spells."
+        android:id="@+id/termsAndCons"
+        android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" android:textStyle="italic"
+        android:textColor="#ffffff"/>
+</RelativeLayout>

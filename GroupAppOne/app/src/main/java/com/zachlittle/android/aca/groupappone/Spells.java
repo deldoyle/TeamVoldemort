@@ -6,25 +6,25 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
 
-/**
- * Created by Zach on 9/13/16.
- */
+
 public class Spells extends AppCompatActivity implements SensorEventListener {
 
     RadioGroup mRadioGroup;
     int spellID =1;
-    private SensorManager shakeTheDevice;
+    MediaPlayer mp = new MediaPlayer();
 
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.magic_stuff);
 
-        shakeTheDevice = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+        SensorManager shakeTheDevice = (SensorManager) getSystemService(SENSOR_SERVICE);
         shakeTheDevice.registerListener(this,
                 shakeTheDevice.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
                 SensorManager.SENSOR_DELAY_NORMAL);
@@ -51,24 +51,27 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
+        playThatFunkyMagic();
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-        MediaPlayer mp = new MediaPlayer();
+    }
+
+    private void playThatFunkyMagic(){
+        int file = R.raw.alohomora;
         switch (spellID){
             case 1:
-                mp.create(this, R.raw.alohomora);
+                file = R.raw.alohomora;
                 break;
             case 2:
-                mp.create(this, R.raw.threexpelliarmus);
+                file = R.raw.threexpelliarmus;
                 break;
             case 3:
-                mp.create(this, R.raw.obliviate);
+                file = R.raw.obliviate;
                 break;
-        }mp.start();
-
-
+        }
+        MediaPlayer.create(this, file);
+        
     }
 }

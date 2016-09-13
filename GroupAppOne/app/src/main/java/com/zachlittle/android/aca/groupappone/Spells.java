@@ -32,7 +32,6 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
         mRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-
                 switch (mRadioGroup.getId()){
                     case R.id.spellOne:
                         spellID =1;
@@ -52,8 +51,6 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         playThatFunkyMagic();
-
-
     }
 
     @Override
@@ -75,8 +72,14 @@ public class Spells extends AppCompatActivity implements SensorEventListener {
         }
         mp = MediaPlayer.create(this, file);
         mp.start();
-        mp.reset();
-        mp.release();
+        mp.setLooping(false);
+        if(mp!=null) {
+            if(mp.isPlaying())
+                mp.stop();
+            mp.reset();
+            mp.release();
+            mp=null;
+        }
 
     }
 }

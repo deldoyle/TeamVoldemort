@@ -15,6 +15,7 @@ public class VoldiesContact extends AppCompatActivity{
 
     TextView mTextView;
     Button mButton;
+    Button mCallButton;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class VoldiesContact extends AppCompatActivity{
         mTextView = (TextView) findViewById(R.id.resultsTextView);
 
         mButton = (Button) findViewById(R.id.googleButton);
+        mCallButton = (Button) findViewById(R.id.callButton);
 
 
 
@@ -36,12 +38,24 @@ public class VoldiesContact extends AppCompatActivity{
         mTextView.append(phoneFromMain + "\n");
         mTextView.append(addressFromMain + "\n");
 
+       mCallButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:973-409-3277"));
+               startActivity(callIntent);
+
+           }
+       });
+
+
         mButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent mapsIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo: " + addressFromMain ));
-                startActivity(mapsIntent);
+                Uri gmmIntentUri = Uri.parse("geo:0,0?q= " + addressFromMain);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
 
             }
         });

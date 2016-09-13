@@ -15,7 +15,7 @@
         android:text="Hotline"
         android:typeface="monospace"
         android:background="@android:color/black"
-        android:layout_margin="2dp"
+        android:layout_margin="2sp"
         android:textColor="#f7f30c"/>
 
     <Button
@@ -28,7 +28,7 @@
         android:layout_alignParentEnd="true"
         android:typeface="monospace"
         android:background="#000000"
-        android:layout_margin="2dp"
+        android:layout_margin="2sp"
         android:textColor="#f7f30c"/>
 
     <TextView
@@ -48,19 +48,6 @@
         android:textColor="#000000"
         android:hint="Text From Address"/>
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="PLEASE DONATE ALL OF YOUR MONEY TO US PLZ CHECK ME OUT ON SOUNDCLOUD yung_swag"
-        android:id="@+id/friendlyMessage"
-        android:layout_above="@+id/resultsTextView"
-        android:layout_alignTop="@+id/callButton"
-        android:layout_toRightOf="@+id/callButton"
-        android:layout_toLeftOf="@+id/googleButton"
-        android:layout_toStartOf="@+id/googleButton"
-        android:textSize="12dp"
-        android:textColor="#f7f30c"/>
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,5 +59,13 @@
         android:layout_marginLeft="10sp"
         android:layout_marginRight="10sp"
         android:layout_marginBottom="10sp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="real magic bro"
+        android:id="@+id/magicButton" android:layout_alignBottom="@+id/callButton"
+        android:layout_centerHorizontal="true" android:layout_margin="2sp"
+        android:background="#ffffff" android:textColor="#000000" android:typeface="serif"
+    />
 
 </RelativeLayout>
